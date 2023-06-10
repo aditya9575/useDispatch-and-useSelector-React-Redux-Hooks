@@ -1,0 +1,57 @@
+useSelector and useDispatch are two React hooks that allow you to access the Redux store from a functional component.
+The useDispatch hook allows you to dispatch actions to the Redux store from your components. The useSelector hook allows you to get values from the Redux store
+based on a selector function.
+
+
+* A ==> useSelector 
+
+
+The useSelector hook is a React Redux hook that returns a value from the Redux store based on a selector function
+To use useSelector, you first need to import it from React Redux:
+import { useSelector } from 'react-redux';
+
+
+Once you have imported it, you can use it in your components like this:
+const App = () => {
+  const counter = useSelector(state => state.counter);
+
+  const handleClick = () => {
+    // Increase the counter by 1
+    dispatch({ type: 'INCREMENT' });
+  };
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+      <button onClick={handleClick}>Click me!</button>
+    </div>
+  );
+};
+
+
+//When you click the button, the INCREMENT action will be dispatched to the Redux store. This will cause the counter reducer to update the state, and the useSelector hook will be called again to get the new value of the counter.
+
+
+* B ==> useDispatch
+
+useDispatch hook returns a function that can be used to dispatch actions to the Redux store from your components.The action function can be any function that returns an action object.
+To use useDispatch, you first need to import it from React Redux:
+import { useDispatch } from 'react-redux';
+
+Once you have imported it, you can use it in your components like this:
+const App = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    // Dispatch an action to the store
+    dispatch({ type: 'SOME_ACTION' });
+  };
+
+  return (
+    <div>
+      <button onClick={handleClick}>Click me!</button>
+    </div>
+  );
+};
+
+//When you click the button, the dispatch function will be called and the SOME_ACTION action will be dispatched to the store. This will trigger the reducers to update the state, and the UI will be updated accordingly.
