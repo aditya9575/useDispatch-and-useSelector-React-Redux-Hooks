@@ -1,4 +1,4 @@
 # useDispatch-and-useSelector-React-Redux-Hooks
-This repository contains a simple example of how to use the useDispatch and useSelector React Redux hooks.
+This repository contains examples illustrating how to use the useDispatch and useSelector React Redux hooks.
 
 
